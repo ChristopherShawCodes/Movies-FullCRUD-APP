@@ -1,38 +1,120 @@
 .App {
   text-align: center;
+  font-size: 24px;
+  font-weight: 200;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#logo{
+  font-size: 36px;
+  margin-top: 10px;
+  margin-right: 50rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav{
+  background-color: black;
+  box-shadow: 1px 3px 0px -1px orange;
+  height: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#allContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+img{
+  height: 300px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.card{
+  width: fit-content;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 5rem;
+  padding: 30px;
+  background-color: black;
+  color: white;
+  box-shadow: 1px 1px 7px 0px orange;
+
+}
+
+
+
+
+.active{
+  color: orange;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+
+
+#add, #list{
+  margin: 20px;
+}
+
+
+#edit{
+  width: 100px;
+}
+
+#edit:hover{
+  background-color: orange;
+}
+
+#editLink{
+  color: orange;
+  text-decoration: none;
+}
+
+#editLink:hover{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+#delete{
+  width: 100px;
+  margin-left: 1.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#oneMovie{
+  width: 75%;
+  height: fit-content;
+  margin: 0 auto;
+  box-shadow: 1px 1px 2px 2px white;
+  margin-top: 5rem;
+}
+
+#oneInfo{
+  margin-right: 7rem;
+  text-align: left;
+}
+
+#passedInfo{
+  color: white;
+}
+p{
+  color: orange;
+}
+
+
+#title{
+  color: orange;
+}
+
+#formContainer{
+  margin-bottom: 50px;
+}
+
+#formHead{
+  border: 1px solid orange;
+  padding: 10px;
+  color: orange;
+  background-color: black;
+}
+
+label, input{
+  margin-top: 5px;
+  font-size: 16px;
 }
