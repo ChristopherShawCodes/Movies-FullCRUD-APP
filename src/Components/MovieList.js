@@ -25,21 +25,25 @@ const MovieList = () => {
 
 
   return (
-    <div className='container' id='allContainer'>
+    <div className='row' id='main'>
+        <div className='col-6' id='left'>
         {
             //here movie can be called anything
             //but this is what we are choosing to call each item in the list
             list.map((movie) =>(
-                <div className='card'>
-                    <p className='text-warning'>--{movie.title}--</p>
-                    <img src={movie.boxArt} alt='Image link broken or missing entirely'/>
-                    <div className='card-body'>
-                    <button className='btn btn-warning'><Link to={`/oneMovie/${movie._id}`} className='btn btn-warning'>Learn More</Link></button>
+                <div className='card bg-dark' id='card'>
+                    <h4 className='card-title text-warning' id='card-title'>{movie.title}</h4>
+                    <img src={movie.boxArt} className='card-img-top' alt='Image link broken or missing entirely'/>
+                    <div id='card-body'>
+                    <Link to={`/oneMovie/${movie._id}`} className='badge rounded-pill text-warning' id='link'>More Info</Link>
                     </div>
-                    <p className='text-warning'>-----------------------</p>
-                </div>
+                    </div>
             ))
         }
+        </div>
+        <div className='col-6' id='right'> 
+        <h1 id='sideText'>All Movies</h1>
+        </div>
     </div>
   )
 }

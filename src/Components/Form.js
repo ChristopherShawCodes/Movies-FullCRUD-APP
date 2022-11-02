@@ -12,6 +12,7 @@ const Form = () => {
     const [releaseYear,setReleaseYear] = useState('')
     const [duration,setDuration] = useState('')
     const [boxArt,setBoxArt] = useState('')
+    const [errors, setErrors] = useState({})
 
     const navigate = useNavigate()
 
@@ -30,18 +31,20 @@ const handleSubmit = (e) => {
         navigate('/movielist')
     }).catch((err)=>{
         console.log(err)
+        setErrors(err.response.data.errors)
     })
 }
 
 
     return (
+    <div className='row' id='main'>
     <div className='col-6 mx-auto mt-5'>
         <form className='form-control bg-dark text-light' onSubmit={handleSubmit} id='formContainer'>
-        <h4 id='formHead'>Add A Movie To The Database</h4>
+        <h4 id='formHead'>{title}</h4>
             <label className='form-label'>Title:</label>
-                <input className='form-control' type='text' onChange={(e)=>setTitle(e.target.value)} value={title}></input>
+                <input className='form-control' placeholder="Movie Title" type='text' onChange={(e)=>setTitle(e.target.value)} value={title}></input>
             <label className='form-label'>Director:</label>
-                <input className='form-control' type='text' onChange={(e)=>setDirector(e.target.value)} value={director}></input>
+                <input className='form-control' placeholder="Director's Name" type='text' onChange={(e)=>setDirector(e.target.value)} value={director}></input>
             <label className='form-label'>Rating:</label>
             <select className='form-control' onChange={(e) =>setRating(e.target.value)} value={rating}>
                 <option>Select A Rating</option>
@@ -67,13 +70,28 @@ const handleSubmit = (e) => {
                 <option value='Anime'>Anime</option>
             </select>
             <label className='form-label'>Release Year:</label>
-                <input className='form-control' type='number' onChange={(e)=>setReleaseYear(e.target.value)} value={releaseYear}></input>
+                <input className='form-control' placeholder='YYYY' type='number' onChange={(e)=>setReleaseYear(e.target.value)} value={releaseYear}></input>
             <label className='form-label'>Duration:</label>
-                <input className='form-control' type='text' onChange={(e)=>setDuration(e.target.value)} value={duration}></input>
+                <input className='form-control' placeholder='0hr 00min' type='text' onChange={(e)=>setDuration(e.target.value)} value={duration}></input>
             <label className='form-label'>Image:</label>
-                <input className='form-control' type='text' onChange={(e)=>setBoxArt(e.target.value)} value={boxArt}></input>
-            <button className='btn btn-primary mt-5 mb-5' type='submit'>Add Movie To Database</button>
+                <input className='form-control' placeholder='copy & paste image address here' type='text' onChange={(e)=>setBoxArt(e.target.value)} value={boxArt}></input>
+            <button className='btn btn-primary mt-3 mb-3' type='submit'>Add Movie To Database</button>
         </form>
+    </div>
+    <div className='col-4' id='rightAdd'>
+    <ul>
+    <li>{errors.title ? <span className='text-danger' id='validationError'>{errors.title.message}</span> : null}</li>
+    <li>{errors.director ? <span className='text-danger' id='validationError'>{errors.director.message}</span> : null}</li>
+    <li>{errors.rating ? <span className='text-danger' id='validationError'>{errors.rating.message}</span> : null}</li>
+    <li>{errors.genre ? <span className='text-danger' id='validationError'>{errors.genre.message}</span> : null}</li>
+    <li>{errors.releaseYear ? <span className='text-danger' id='validationError'>{errors.releaseYear.message}</span> : null}</li>
+    <li>{errors.duration ? <span className='text-danger' id='validationError'>{errors.duration.message}</span> : null}</li>
+    <li>{errors.boxArt ? <span className='text-danger' id='validationError'>{errors.boxArt.message}</span> : null}</li>
+    </ul> 
+        </div>
+        <div className='col-2'>
+        <h1 id='addingText'>Adding A Movie.</h1>
+        </div>
     </div>
 )
 }

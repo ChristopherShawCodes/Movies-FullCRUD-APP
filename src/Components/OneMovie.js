@@ -35,25 +35,33 @@ const OneMovie = () => {
 
 
   return (
-        <div className='card' id='oneMovie'>
-            <p className='card-title text-warning'>--------{movie.title}--------</p>
-            <div className='row'>
+    <div className='row' id='oneMain'>
+    <div class="card" id='oneMovie'>
+    <div class="card-header" id='oneNav'>
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active bg-dark" aria-current="page" href="#">{movie.title}</a>
+        </li>
+        <li class="nav-item">
+        <Link className='nav-link' to={`/edit/${movie._id}`}>Edit Movie</Link>
+        </li>
+        <li class="nav-item">
+                <a><button onClick={(e)=> handleDelete(movie._id)} className='nav-link text-danger'>Delete Movie</button></a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" id='oneMovieBody'>
                 <img className='col-4' src={movie.boxArt} alt='Image link broken or missing entirely' id='oneImage'/>
-                <div className='card-body col-4' id='oneInfo'>
-                    <p>Director:  <span id='passedInfo'>{movie.director}</span></p>
-                    <p>Rating: <span id='passedInfo'>{movie.rating}</span></p>
-                    <p>Genre:  <span id='passedInfo'>{movie.genre}</span></p>
-                    <p>Duration: <span id='passedInfo'>{movie.duration}</span></p>
+                <div id='oneMovieText'>
+                    <p class="card-text">Genre: {movie.genre}</p>
+                    <p class="card-text">Rating: {movie.rating}</p>
+                    <p class="card-text">Director: {movie.director}</p>
+                    <p class="card-text">Duration: {movie.duration}</p>
+                    <p class="card-text">Release Year: {movie.releaseYear}</p>
                 </div>
-                <div className='card-body col-2' id='oneButtons'>
-                    <button className='btn btn-outline-warning' id='edit'><Link to={`/edit/${movie._id}`} id='editLink'>Edit Movie</Link></button>
-                <div className='card-body col-2' id='oneButtons'>
-                    <button onClick={(e)=> handleDelete(movie._id)} className='btn btn-outline-danger' id='delete'>Delete Movie</button>
-                </div>
-                </div>
-            </div>
-            <p className='text-warning'>-------------------------------------</p>
-        </div>
+    </div>
+  </div>
+  </div>   
   )
 }
 

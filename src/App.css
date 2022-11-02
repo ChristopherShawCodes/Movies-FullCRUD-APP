@@ -1,3 +1,48 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 .App {
   text-align: center;
   font-size: 24px;
@@ -5,116 +50,189 @@
 }
 
 #logo{
-  font-size: 36px;
-  margin-top: 10px;
-  margin-right: 50rem;
-}
+  font-size: 30px;
+  margin-top: 15px;
+  background: linear-gradient(to left, gray, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fade 1s ease-in 1s;
 
-.nav{
-  background-color: black;
-  box-shadow: 1px 3px 0px -1px orange;
-  height: 100px;
-}
-
-#allContainer{
-  display: flex;
 }
 
 img{
-  height: 300px;
-  width: fit-content;
-  margin: 0 auto;
+  height: 400px;
+  width: 280px;
+  box-shadow: 1px 1px 5px 1px gray;
 }
 
-.card{
-  width: fit-content;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-top: 5rem;
-  padding: 30px;
+
+#card{
+  width: 20rem;
+  height: fit-content;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+  padding: 20px;
   background-color: black;
   color: white;
   box-shadow: 1px 1px 7px 0px orange;
+}
 
+#card-body{
+  margin-top: 5%;
+}
+
+#card-title{
+  margin-bottom: 5%;
+}
+
+#link{
+  text-decoration: none;
+  opacity: 80%;
+  border: 1px solid orange;
+  padding: 3%;
+  border-radius: 3%;
 }
 
 
-
+#link:hover{
+  opacity: 120%;
+}
 
 .active{
-  color: orange;
   border: 1px solid white;
-  border-radius: 10px;
-}
-
-
-
-#add, #list{
-  margin: 20px;
-}
-
-
-#edit{
-  width: 100px;
-}
-
-#edit:hover{
   background-color: orange;
+  opacity: 80%;
 }
 
-#editLink{
-  color: orange;
-  text-decoration: none;
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100;
+  }
 }
 
-#editLink:hover{
-  color: white;
+#navBar{
+  background-color: #191919;
+  box-shadow: 1px 2px 1px -1px orange;
+
 }
 
-
-#delete{
-  width: 100px;
-  margin-left: 1.8rem;
-}
 
 #oneMovie{
-  width: 75%;
-  height: fit-content;
   margin: 0 auto;
-  box-shadow: 1px 1px 2px 2px white;
-  margin-top: 5rem;
+  min-width: 480px;
+  max-width: 700px;
+  box-shadow: 1px 1px 6px 2px orange;
+  margin-top: 7rem;
+  background: #191919;
 }
 
-#oneInfo{
-  margin-right: 7rem;
+#oneMovie img{
+  min-width: 260px;
+  max-width: 300px;
+  min-height: 400px;
+  max-height: 420px;
+  margin-right: 1rem;
+}
+
+#oneMovieBody{
+  display: flex;
+  padding: 2rem;
+}
+
+#oneMovieText{
+  display: block;
   text-align: left;
+  margin: 1rem;
 }
 
-#passedInfo{
+#oneMovieText p{
   color: white;
+  margin-top: 10px;
 }
+
+#oneNav{
+  border-bottom: 2px solid white;
+  width: 80%;
+}
+
 p{
-  color: orange;
-}
-
-
-#title{
   color: orange;
 }
 
 #formContainer{
   margin-bottom: 50px;
+  margin-top: 1rem;
+  max-width: 500px;
+  min-width: 200px;
+}
+
+select{
+  text-align: center;
 }
 
 #formHead{
-  border: 1px solid orange;
-  padding: 10px;
-  color: orange;
-  background-color: black;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  border-bottom: 1px solid blue;
+  height: 40px;
+  opacity: 80%;
 }
 
 label, input{
   margin-top: 5px;
   font-size: 16px;
+  color: orange;
+  text-align: center;
+}
+
+#main{
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+#oneMain{
+  margin-top: 5%;
+}
+
+#right{
+  display: block;
+  position: fixed;
+  right: 0;
+}
+
+#sideText{
+  writing-mode: vertical-rl;
+  float: right;
+  margin-right: 15%;
+  margin-top: 20%;
+  font-size: 84px;
+  background: linear-gradient(to left, gray, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 30%;
+}
+
+#addingText{
+  writing-mode: vertical-rl;
+  float: right;
+  margin-right: 15%;
+  margin-top: 7rem;
+  font-size: 64px;
+  background: linear-gradient(to left, gray, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 30%;
+}
+
+#rightAdd{
+  margin-top: 10%;
+}
+
+#rightAdd li{
+  margin-top: 20%;
+  margin-bottom: 10%;
 }

@@ -16,7 +16,6 @@ function App() {
         <Route path='/movielist' element={<MovieList/>}/>
         <Route path='/oneMovie/:id' element={<OneMovie/>}/>
         <Route path='/edit/:id' element={<EditForm/>}/>
-
       </Routes>
     </BrowserRouter>
     </div>
