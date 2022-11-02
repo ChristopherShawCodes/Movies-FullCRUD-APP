@@ -1,10 +1,16 @@
 A full CRUD javascript application built with React, MogoDB, Express and NodeJS
 
+-----------------------------------------
+
 -Create a new movie and store it in the db
+
 -Display All and Display One by ID
+
 -Update By ID
+
 -Delete By ID
 
+----------------------------------------
 
 Built during Coding Dojo Bootcamp Week 6
 
